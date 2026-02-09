@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Mohan Narasimha | Data Engineer • GenAI</title>
+<meta name="description" content="Professional portfolio for Data Engineer / GenAI Engineer roles: projects, skills, experience, and contact." />
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+/* ===========================
+   THEME VARIABLES
+=========================== */
+:root{
+  --bg:#0b0f14;
+  --card:#0f1620;
+  --text:#eaeef5;
+  --muted:#9fb0c3;
+  --line:#1f2937;
+  --shadow:0 16px 40px rgba(0,0,0,.35);
+
+  --brand:#7c5cff;
+  --brand2:#22c55e;
+  --chip:#111b29;
+  --chipText:#b7c6d8;
+}
+
+[data-theme="light"]{
+  --bg:#f7f8fb;
+  --card:#ffffff;
+  --text:#0f172a;
+  --muted:#475569;
+  --line:#e2e8f0;
+  --shadow:0 14px 30px rgba(2,6,23,.12);
+
+  --brand:#6d28d9;
+  --brand2:#16a34a;
+  --chip:#f1f5f9;
+  --chipText:#334155;
+}
+
+/* ===========================
+   BASE
+=========================== */
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Inter,system-ui,Arial;
+  background:
+    radial-gradient(900px 480px at 20% -10%, rgba(124,92,255,.20), transparent 55%),
+    radial-gradient(900px 480px at 90% 10%, rgba(34,197,94,.14), transparent 55%),
+    var(--bg);
+  color:var(--text);
+  line-height:1.6;
+}
+a{text-decoration:none;color:inherit}
+.container{max-width:1100px;margin:auto;padding:0 18px}
+
+/* ===========================
+   HEADER (LinkedIn-style)
+=========================== */
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(10,14,20,.82);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+[data-theme="light"] header{
+  background:rgba(247,248,251,.85);
+  border-bottom:1px solid var(--line);
+}
+.nav{
+  height:66px;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:12px;
+}
+.brand{
+  display:flex;align-items:center;gap:10px;
+  font-weight:900;
+  letter-spacing:-.2px;
+}
+.brandDot{
+  width:12px;height:12px;border-radius:999px;
+  background:linear-gradient(135deg,var(--brand),var(--brand2));
+  box-shadow:0 0 0 4px rgba(124,92,255,.15);
+}
+.menu{display:flex;gap:18px}
+.menu a{color:var(--muted);font-weight:700;font-size:14px}
+.menu a:hover{color:var(--text)}
+
+.actions{display:flex;align-items:center;gap:10px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:10px 14px;border-radius:14px;
+  font-weight:800;font-size:14px;
+  border:1px solid transparent;
+  cursor:pointer;transition:.15s ease;
+}
+.btnPrimary{
+  background:linear-gradient(135deg,var(--brand),#3b82f6);
+  color:#fff;
+  box-shadow:0 12px 24px rgba(124,92,255,.22);
+}
+.btnSecondary{
+  background:rgba(255,255,255,.04);
+  border-color:rgba(255,255,255,.10);
+  color:var(--text);
+}
+[data-theme="light"] .btnSecondary{background:#fff;border-color:var(--line)}
+.btn:hover{transform:translateY(-1px)}
+.iconBtn{
+  padding:10px 12px;border-radius:14px;
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(255,255,255,.04);
+  color:var(--text);
+  cursor:pointer;
+}
+[data-theme="light"] .iconBtn{border:1px solid var(--line);background:#fff}
+.iconBtn:hover{transform:translateY(-1px)}
+
+.mobileOnly{display:none}
+.mobileMenu{
+  display:none;
+  flex-direction:column;
+  gap:12px;
+  padding:12px 18px 18px;
+}
+.mobileMenu a{color:var(--muted);font-weight:900}
+.mobileMenu a:hover{color:var(--text)}
+
+/* ===========================
+   HERO (Recruiter-first)
+=========================== */
+.hero{padding:70px 0 38px}
+.heroGrid{display:grid;grid-template-columns: 1.2fr .95fr;gap:16px;align-items:start}
+.pill{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:8px 12px;border-radius:999px;
+  background:rgba(124,92,255,.10);
+  border:1px solid rgba(124,92,255,.18);
+  font-weight:800;font-size:13px;
+}
+h1{margin:14px 0 10px;font-size:44px;letter-spacing:-1px}
+.subtitle{color:var(--muted);max-width:62ch}
+.metaRow{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.metaTag{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:8px 10px;border-radius:999px;
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(255,255,255,.03);
+  color:var(--muted);
+  font-weight:900;font-size:12px;
+}
+[data-theme="light"] .metaTag{border:1px solid var(--line);background:#fff}
+
+.card{
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:18px;
+  padding:18px;
+  box-shadow:var(--shadow);
+}
+[data-theme="light"] .card{background:#fff;border:1px solid var(--line)}
+.cardTitle{font-size:16px;font-weight:900;margin:0 0 10px}
+.divider{height:1px;background:rgba(255,255,255,.10);margin:14px 0}
+[data-theme="light"] .divider{background:var(--line)}
+.bullets{margin:0;padding-left:18px;color:var(--muted)}
+.bullets li{margin:8px 0}
+.linkRow{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+.linkPill{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:9px 10px;border-radius:999px;
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(255,255,255,.03);
+  font-weight:900;font-size:13px;
+}
+[data-theme="light"] .linkPill{border:1px solid var(--line);background:#fff}
+.linkPill span{color:var(--muted);font-weight:800}
+
+/* ===========================
+   SECTIONS
+=========================== */
+section{padding:64px 0}
+.sectionHead{margin-bottom:22px}
+.sectionHead h2{font-size:28px;margin:0 0 6px}
+.sectionHead p{margin:0;color:var(--muted)}
+
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.grid.two{grid-template-columns:repeat(2,1fr)}
+
+.project h3{margin:0 0 6px;font-size:16px}
+.project p{margin:0;color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.tag{
+  padding:6px 10px;border-radius:999px;
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(255,255,255,.02);
+  color:var(--chipText);
+  font-weight:900;font-size:12px;
+}
+[data-theme="light"] .tag{border:1px solid var(--line);background:var(--chip)}
+
+.cardActions{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+.smallBtn{
+  padding:9px 10px;border-radius:14px;
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(255,255,255,.03);
+  font-weight:900;font-size:13px;
+}
+[data-theme="light"] .smallBtn{border:1px solid var(--line);background:#fff}
+.smallBtn:hover{transform:translateY(-1px)}
+
+.timeline{display:flex;flex-direction:column;gap:12px}
+.item .topRow{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.item h3{margin:0 0 4px}
+.muted{color:var(--muted);font-weight:700}
+.item ul{margin:10px 0 0;padding-left:18px;color:var(--muted)}
+.item ul li{margin:8px 0}
+
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{
+  padding:9px 12px;border-radius:999px;
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(255,255,255,.03);
+  font-weight:900;color:var(--muted);font-size:13px;
+}
+[data-theme="light"] .chip{border:1px solid var(--line);background:#fff}
+
+.contactGrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.kv{display:grid;grid-template-columns:140px 1fr;gap:10px;margin-top:10px}
+.k{color:var(--muted);font-weight:900}
+.v a{font-weight:900}
+.v a:hover{text-decoration:underline}
+
+.form{display:flex;flex-direction:column;gap:12px;margin-top:12px}
+label{display:flex;flex-direction:column;gap:6px;font-weight:900;font-size:13px;color:var(--muted)}
+input,textarea{
+  width:100%;padding:12px 12px;border-radius:14px;
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.03);
+  color:var(--text);outline:none;
+}
+[data-theme="light"] input,[data-theme="light"] textarea{
+  border:1px solid var(--line);background:#fff;color:var(--text)
+}
+input:focus,textarea:focus{
+  border-color:rgba(124,92,255,.55);
+  box-shadow:0 0 0 4px rgba(124,92,255,.12)
+}
+
+footer{
+  border-top:1px solid rgba(255,255,255,.10);
+  padding:26px 0;
+}
+[data-theme="light"] footer{border-top:1px solid var(--line)}
+.foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.small{font-size:13px}
+
+/* ===========================
+   ATS KEYWORDS (hidden but readable)
+=========================== */
+.ats{
+  position:absolute;
+  left:-9999px; top:auto; width:1px; height:1px;
+  overflow:hidden;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media(max-width:940px){
+  .heroGrid{grid-template-columns:1fr}
+  .grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:700px){
+  h1{font-size:36px}
+  .menu{display:none}
+  .mobileOnly{display:inline-flex}
+  .mobileMenu{display:flex}
+  .grid,.grid.two,.contactGrid{grid-template-columns:1fr}
+  .kv{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+
+<!-- ATS keywords (Edit these based on roles you want) -->
+<div class="ats" aria-hidden="true">
+  Data Engineer, ETL, ELT, Python, SQL, PostgreSQL, MySQL, Snowflake, Redshift, BigQuery, Data Warehousing, Dimensional Modeling, Star Schema,
+  Apache Spark, PySpark, Databricks, Airflow, Prefect, dbt, Kafka, Kinesis, S3, Glue, Lambda, Azure Data Factory, Azure Synapse,
+  CI/CD, Docker, Git, REST APIs, Data Quality, Observability, Unit Testing, Analytics Engineering,
+  Machine Learning, NLP, LLMs, GenAI, RAG, Vector Database, Embeddings, Prompt Engineering, Model Deployment, MLOps,
+  Power BI, DAX, Dashboarding, Storytelling, KPI, Stakeholder Management, Agile, Scrum
+</div>
+
+<header>
+  <div class="container nav">
+    <div class="brand">
+      <span class="brandDot"></span>
+      <span id="brandName">Mohan Narasimha</span>
+    </div>
+
+    <nav class="menu" aria-label="Primary">
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="actions">
+      <!-- Resume auto-download -->
+      <button id="resumeBtn" class="btn btnSecondary" title="Download Resume">⬇ Resume</button>
+
+      <!-- Theme toggle -->
+      <button id="themeBtn" class="iconBtn" title="Toggle dark/light">☾</button>
+
+      <!-- Mobile menu button -->
+      <button id="menuBtn" class="iconBtn mobileOnly" title="Menu">☰</button>
+    </div>
+  </div>
+
+  <div id="mobileMenu" class="mobileMenu container" style="display:none">
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="container heroGrid">
+      <div>
+        <div class="pill">Open to Opportunities • Data Engineer • GenAI</div>
+        <h1 id="heroName">Mohan Narasimha</h1>
+        <p class="subtitle" id="heroSummary">
+          I build scalable data pipelines, analytics dashboards, and GenAI-enabled apps.
+          Strong in Python, SQL, cloud services, and business-focused storytelling through data.
+        </p>
+
+        <div class="metaRow">
+          <div class="metaTag">📍 <span id="metaLocation">United States</span></div>
+          <div class="metaTag">🧰 <span>Python • SQL • AWS • Power BI</span></div>
+          <div class="metaTag">🎯 <span>Data Engineer / GenAI Engineer</span></div>
+        </div>
+
+        <div style="margin-top:18px; display:flex; gap:12px; flex-wrap:wrap;">
+          <a class="btn btnPrimary" href="#projects">View Projects</a>
+          <a class="btn btnSecondary" href="#contact">Contact</a>
+        </div>
+      </div>
+
+      <!-- Highlights (LinkedIn style) -->
+      <div class="card">
+        <div class="cardTitle">Highlights</div>
+        <ul class="bullets" id="highlights">
+          <li>Built analytics dashboards and insights for job-market & salary trends (Power BI + Python).</li>
+          <li>Developed prediction models for salary estimation and skill-demand insights.</li>
+          <li>Designed end-to-end pipelines & reporting structures using SQL and data modeling.</li>
+        </ul>
+
+        <div class="divider"></div>
+
+        <div class="cardTitle">Links</div>
+        <div class="linkRow">
+          <a class="linkPill" href="https://github.com/" target="_blank" rel="noreferrer">GitHub <span>↗</span></a>
+          <a class="linkPill" href="https://linkedin.com/" target="_blank" rel="noreferrer">LinkedIn <span>↗</span></a>
+          <a class="linkPill" href="#contact">Email <span>↗</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="container">
+      <div class="sectionHead">
+        <h2>Projects</h2>
+        <p>Impact-focused projects with real tools recruiters look for.</p>
+      </div>
+
+      <div class="grid">
+        <div class="card project">
+          <h3>FutureWorks Employability Analytics Dashboard</h3>
+          <p>
+            Power BI executive dashboard analyzing salary trends, skills, and employers.
+            Integrated a salary prediction model (Python) for decision support.
+          </p>
+          <div class="tags">
+            <span class="tag">Power BI</span>
+            <span class="tag">Python</span>
+            <span class="tag">Machine Learning</span>
+            <span class="tag">SQL</span>
+          </div>
+          <div class="cardActions">
+            <a class="smallBtn" href="#" target="_blank" rel="noreferrer">Live Demo</a>
+            <a class="smallBtn" href="#" target="_blank" rel="noreferrer">GitHub</a>
+          </div>
+        </div>
+
+        <div class="card project">
+          <h3>AI Language Learning App</h3>
+          <p>
+            AI-based pronunciation + correction app to improve accent and fluency.
+            Built around NLP workflows and feedback loops.
+          </p>
+          <div class="tags">
+            <span class="tag">GenAI</span>
+            <span class="tag">NLP</span>
+            <span class="tag">Python</span>
+          </div>
+          <div class="cardActions">
+            <a class="smallBtn" href="#" target="_blank" rel="noreferrer">Case Study</a>
+            <a class="smallBtn" href="#" target="_blank" rel="noreferrer">GitHub</a>
+          </div>
+        </div>
+
+        <div class="card project">
+          <h3>PetConnect</h3>
+          <p>
+            Platform to reunite lost pets using geolocation, community updates,
+            and AI-assisted pet identification.
+          </p>
+          <div class="tags">
+            <span class="tag">Web App</span>
+            <span class="tag">AI</span>
+            <span class="tag">Geolocation</span>
+          </div>
+          <div class="cardActions">
+            <a class="smallBtn" href="#" target="_blank" rel="noreferrer">Prototype</a>
+            <a class="smallBtn" href="#" target="_blank" rel="noreferrer">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="container">
+      <div class="sectionHead">
+        <h2>Skills</h2>
+        <p>Grouped the way recruiters scan resumes.</p>
+      </div>
+
+      <div class="grid two">
+        <div class="card">
+          <div class="cardTitle">Data Engineering</div>
+          <div class="chips">
+            <span class="chip">Python</span>
+            <span class="chip">SQL</span>
+            <span class="chip">ETL / ELT</span>
+            <span class="chip">Data Modeling</span>
+            <span class="chip">Warehousing</span>
+            <span class="chip">APIs</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="cardTitle">Cloud & Big Data</div>
+          <div class="chips">
+            <span class="chip">AWS (S3, Glue, Lambda)</span>
+            <span class="chip">Redshift</span>
+            <span class="chip">Spark / PySpark</span>
+            <span class="chip">Databricks</span>
+            <span class="chip">Docker</span>
+            <span class="chip">Kafka</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="cardTitle">Analytics & BI</div>
+          <div class="chips">
+            <span class="chip">Power BI</span>
+            <span class="chip">DAX</span>
+            <span class="chip">KPIs</span>
+            <span class="chip">Storytelling</span>
+            <span class="chip">Dashboards</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="cardTitle">GenAI / ML</div>
+          <div class="chips">
+            <span class="chip">Machine Learning</span>
+            <span class="chip">NLP</span>
+            <span class="chip">LLM Concepts</span>
+            <span class="chip">RAG Basics</span>
+            <span class="chip">Model Deployment</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="container">
+      <div class="sectionHead">
+        <h2>Experience</h2>
+        <p>Keep this section outcomes-based (metrics help a lot).</p>
+      </div>
+
+      <div class="timeline">
+        <div class="card item">
+          <div class="topRow">
+            <div>
+              <h3>Graduate Projects • Data & Analytics</h3>
+              <div class="muted">Saint Louis University</div>
+            </div>
+            <div class="muted">2023 – Present</div>
+          </div>
+          <ul>
+            <li>Built Power BI dashboards using structured datasets and business KPIs.</li>
+            <li>Developed ML models in Python to predict salary outcomes and support insights.</li>
+            <li>Designed reporting pipelines and data structures using SQL + best practices.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="container">
+      <div class="sectionHead">
+        <h2>Education</h2>
+        <p>Make education easy to verify quickly.</p>
+      </div>
+
+      <div class="grid two">
+        <div class="card">
+          <div class="cardTitle">Master’s in Information Systems</div>
+          <div class="muted">Saint Louis University</div>
+          <div class="divider"></div>
+          <div class="muted small">
+            Focus: Data Engineering, Analytics, Cloud, Visualization
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="cardTitle">Bachelor’s in Computer Science</div>
+          <div class="muted">Undergraduate Degree</div>
+          <div class="divider"></div>
+          <div class="muted small">
+            Focus: Programming, Databases, Software Engineering
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="sectionHead">
+        <h2>Contact</h2>
+        <p>Fastest ways recruiters reach you.</p>
+      </div>
+
+      <div class="contactGrid">
+        <div class="card">
+          <div class="cardTitle">Quick Message</div>
+          <p class="muted small">This opens your email app with a pre-filled message.</p>
+
+          <form id="contactForm" class="form">
+            <label>
+              Name
+              <input id="cName" type="text" placeholder="Your name" required>
+            </label>
+            <label>
+              Email
+              <input id="cEmail" type="email" placeholder="you@example.com" required>
+            </label>
+            <label>
+              Message
+              <textarea id="cMsg" rows="5" placeholder="Hi Mohan, I’d like to connect about..." required></textarea>
+            </label>
+            <button class="btn btnPrimary" type="submit">Send</button>
+          </form>
+        </div>
+
+        <div class="card">
+          <div class="cardTitle">Details</div>
+          <div class="kv">
+            <div class="k">Email</div>
+            <div class="v"><a id="emailLink" href="mailto:mohan@example.com">mohan@example.com</a></div>
+
+            <div class="k">LinkedIn</div>
+            <div class="v"><a href="https://linkedin.com/" target="_blank" rel="noreferrer">linkedin.com/in/yourprofile</a></div>
+
+            <div class="k">GitHub</div>
+            <div class="v"><a href="https://github.com/" target="_blank" rel="noreferrer">github.com/yourusername</a></div>
+
+            <div class="k">Resume</div>
+            <div class="v"><a href="./resume.pdf" target="_blank" rel="noreferrer">resume.pdf</a></div>
+          </div>
+
+          <div class="divider"></div>
+          <p class="muted small">
+            Tip: Replace links with your real URLs. Add a resume file named <b>resume.pdf</b> in the project.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container foot">
+    <p class="muted small">© <span id="year"></span> Mohan Narasimha • Professional Portfolio</p>
+    <a class="muted small" href="#top">Back to top ↑</a>
+  </div>
+</footer>
+
+<script>
+/* ===========================
+   THEME TOGGLE (Remembers choice)
+=========================== */
+(function initTheme(){
+  const saved = localStorage.getItem("theme");
+  if(saved) document.documentElement.setAttribute("data-theme", saved);
+  const btn = document.getElementById("themeBtn");
+  setThemeIcon(btn);
+
+  btn.addEventListener("click", () => {
+    const current = document.documentElement.getAttribute("data-theme") || "dark";
+    const next = current === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", next);
+    localStorage.setItem("theme", next);
+    setThemeIcon(btn);
+  });
+
+  function setThemeIcon(btn){
+    const current = document.documentElement.getAttribute("data-theme") || "dark";
+    btn.textContent = current === "dark" ? "☀" : "☾";
+  }
+})();
+
+/* ===========================
+   MOBILE MENU
+=========================== */
+(function mobileMenu(){
+  const btn = document.getElementById("menuBtn");
+  const menu = document.getElementById("mobileMenu");
+  btn.addEventListener("click", () => {
+    const open = menu.style.display === "flex";
+    menu.style.display = open ? "none" : "flex";
+  });
+  // Close on click
+  [...menu.querySelectorAll("a")].forEach(a => a.addEventListener("click", ()=> menu.style.display="none"));
+})();
+
+/* ===========================
+   RESUME AUTO-DOWNLOAD
+   - Upload "resume.pdf" in same folder
+=========================== */
+document.getElementById("resumeBtn").addEventListener("click", () => {
+  const a = document.createElement("a");
+  a.href = "./resume.pdf";
+  a.download = "Mohan_Narasimha_Resume.pdf";
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+});
+
+/* ===========================
+   CONTACT FORM (mailto)
+=========================== */
+document.getElementById("contactForm").addEventListener("submit", (e) => {
+  e.preventDefault();
+  const name = document.getElementById("cName").value.trim();
+  const email = document.getElementById("cEmail").value.trim();
+  const msg = document.getElementById("cMsg").value.trim();
+
+  const subject = encodeURIComponent(`Portfolio Contact — ${name}`);
+  const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${msg}`);
+  window.location.href = `mailto:mohan@example.com?subject=${subject}&body=${body}`;
+});
+
+/* ===========================
+   FOOTER YEAR
+=========================== */
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
